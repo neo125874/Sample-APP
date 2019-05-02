@@ -1,6 +1,6 @@
 # Sample APP
 
-Windows WPF APP exam for candidate
+Windows WPF APP exam for candidate123
 
 Getting Started
 - Please install Visual Studio Express 2017 first.
