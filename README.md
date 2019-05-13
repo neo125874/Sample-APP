@@ -3,7 +3,7 @@
 Windows WPF APP exam for candidate123
 
 Getting Started
-- Please install Visual Studio Express 2017 first.
+- Please install Visual Studio Express first.
 https://visualstudio.microsoft.com/zh-hant/vs/express/
 
 - Please go GitLab to register a account and clone the following project.
