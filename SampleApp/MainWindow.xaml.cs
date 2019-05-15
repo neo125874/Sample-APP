@@ -24,5 +24,23 @@ namespace SampleApp
         {
             InitializeComponent();
         }
+
+        private void TokenText_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if(TokenText.Tag.ToString() == "True")
+            {
+                TokenText.Tag = "False";
+                TokenText.Text = "";
+            }
+        }
+
+        private void TokenText_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(TokenText.Text) && TokenText.Tag.ToString() == "False")
+            {
+                TokenText.Text = "Enter user secret here";
+                TokenText.Tag = "True";
+            }
+        }
     }
 }
