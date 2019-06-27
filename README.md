@@ -5,8 +5,10 @@
 Hi ,
 
 Thanks for your interest in the position.  
-We have a Windows APP exam (C#) before interview. Please finish it and commit your code to GitLab before interview. You can create a new branch for you.
-**You may need the permission to commit and create branch, please provide your GitLab account to us.**
+
+We have a Windows APP exam (C#) before interview. Please finish it and commit your code to GitLab before interview. 
+
+Please create a new branch for your commit. **You may need the permission to commit and create branch, please provide your GitLab account to us.**
 
 <a name="Getting-Started"></a>
 
@@ -26,7 +28,7 @@ In this APP, you have to finish the 2 functions :
 
 ## 1\. XML Parser :
 
-There is a XML file on the web :https://s3-ap-northeast-1.amazonaws.com/test.storejetcloud.com/product.xml  
+There is a XML file on the web : https://s3-ap-northeast-1.amazonaws.com/test.storejetcloud.com/product.xml  
 Please implement a function to parser the content and fill the value (SN/PN/IO/FW) on the TextBlock in the APP.
 
 **Expected result :  
