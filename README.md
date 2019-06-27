@@ -5,13 +5,14 @@
 Hi ,
 
 Thanks for your interest in the position.  
-We have a Windows APP exam (C#) before interview. Please finish it and commit your code to GitLab before interview. You can create a branch for you.
+We have a Windows APP exam (C#) before interview. Please finish it and commit your code to GitLab before interview. You can create a new branch for you.
+**You may need the permission to commit and create branch, please provide your GitLab account to us.**
 
 <a name="Getting-Started"></a>
 
 ## Getting Started
 
-- Please install Visual Studio Express 2017 first.  
+- Please install Visual Studio Express first.  
 [https://visualstudio.microsoft.com/zh-hant/vs/express/](https://visualstudio.microsoft.com/zh-hant/vs/express/)
 
 - Please go GitLab to register an account and clone the following project.  
