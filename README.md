@@ -1,3 +1,103 @@
+## Selling points
+* Models
+```csharp
+        [XmlRoot(ElementName = "product")]
+        public class Product
+        {
+            [XmlElement(ElementName = "SN")]
+            public string SN { get; set; }
+            [XmlElement(ElementName = "PN")]
+            public string PN { get; set; }
+            [XmlElement(ElementName = "IO")]
+            public string IO { get; set; }
+            [XmlElement(ElementName = "FW")]
+            public string FW { get; set; }
+        }
+```
+* BackgroundWorker
+* RestSharp
+* BusyIndicator
+```csharp
+        private void OnGetInfoClick(object sender, RoutedEventArgs e)
+        {
+            BackgroundWorker worker = new BackgroundWorker();
+
+            //this is where the long running process should go
+            worker.DoWork += (o, ea) =>
+            {
+                //no direct interaction with the UI is allowed from this method
+                var ProductUrl = ConfigurationManager.AppSettings["ProductUrl"];
+
+                var client = new RestClient();
+                client.BaseUrl = new Uri(ProductUrl, UriKind.Absolute);
+
+                var request = new RestRequest();
+                request.XmlSerializer = new RestSharp.Serializers.DotNetXmlSerializer();
+                request.RequestFormat = RestSharp.DataFormat.Xml;
+
+                var response = client.Execute<Product>(request);
+                var displayData = response.Data;
+
+                ea.Result = displayData;
+            };
+            worker.RunWorkerCompleted += (o, ea) =>
+            {
+                #region TextBlock
+                ...
+                #endregion
+
+                var displayData = ea.Result as Product;
+
+                ...
+
+                //work has completed. you can now interact with the UI
+                _busyIndicator.IsBusy = false;
+            };
+            
+            //set the IsBusy before you start the thread
+            _busyIndicator.IsBusy = true;
+
+            worker.RunWorkerAsync();
+        }
+```
+* Programatically Set
+```csharp
+        private void OnSigninClick(object sender, RoutedEventArgs e) {
+            BackgroundWorker worker = new BackgroundWorker();
+
+            ...
+
+            if (!string.IsNullOrEmpty(token)) {
+                worker.DoWork += (o, ea) =>
+                {
+                    ...
+                };
+                worker.RunWorkerCompleted += (o, ea) =>
+                {
+                    ...
+
+                    if (!string.IsNullOrEmpty(displayData.ProfilePhotoUrl)) {
+                        BitmapImage bitmap = new BitmapImage();
+                        bitmap.BeginInit();
+                        bitmap.UriSource = new Uri(displayData.ProfilePhotoUrl);
+                        bitmap.EndInit();
+
+                        ViewBox.Child = new Image()
+                        {
+                            Source = bitmap
+                        };
+                    }
+                    
+                    _busyIndicator.IsBusy = false;
+                };
+
+                _busyIndicator.IsBusy = true;
+
+                worker.RunWorkerAsync();
+            }
+        }
+```
+
 <a name="To-Windows-APP-Candidate"></a>
 
 # To Windows APP Candidate (Transcend)
