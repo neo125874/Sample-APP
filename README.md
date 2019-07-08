@@ -98,6 +98,27 @@
         }
 ```
 
+## FAQ
+* FAT(12, 16, 32)
+    * File Allocation Table
+* exFAT
+    * Extended File Allocation Table
+* NTFS
+    * New Technology File System
+    
+[https://www.mobile01.com/topicdetail.php?f=297&t=5459371]
+* MBR
+    * Master Boot Record
+* GPT
+    * GUID Partition Table
+    
+[https://kknews.cc/zh-tw/news/3ll6k2g.html]
+* File System vs Partition
+    * [http://jasonyychiu.blogspot.com/2017/06/ntfsfat32mbrgpt.html]
+* ext4
+    * Fourth extended filesystem
+    * ext vs ntfs [https://www.ubuntu-tw.org/modules/newbb/viewtopic.php?post_id=299000]
+
 <a name="To-Windows-APP-Candidate"></a>
 
 # To Windows APP Candidate (Transcend)
